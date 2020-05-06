@@ -1,19 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
 
-    <!-- You can also require other files to run in this process -->
-    <script src="./renderer.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+  <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+  <title>Hello World!</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <h1>Hello World!</h1>
+  We are using Node.js <span id="node-version"></span>,
+  Chromium <span id="chrome-version"></span>,
+  and Electron <span id="electron-version"></span>.
+
+  <!-- You can also require other files to run in this process -->
+  <script src="./renderer.js"></script>
+  <h3>browserWindow Module learn -- 2020/5/5</h3>
+  <button id="new-window">open new window</button>
+  <button class="demo-button disappear" id="focus-on-modal-window">Focus on Demo</button>
+
+  <button id="loadBtn">加载本地数据</button>
+  <div id="showData"></div>
+  <h3>渲染进程和主线程通信</h3>
+  <button id="add">通知主线程打开一个窗口</button>
+  <script src="./demo/window.js"></script>
+</body>
+
 </html>

@@ -1,19 +1,78 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
 
-    <!-- You can also require other files to run in this process -->
-    <script src="./renderer.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+  <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+  <title>Hello World!</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <h1>Hello World!</h1>
+  We are using Node.js <span id="node-version"></span>,
+  Chromium <span id="chrome-version"></span>,
+  and Electron <span id="electron-version"></span>.
+
+  <!-- You can also require other files to run in this process -->
+  <script src="./renderer.js"></script>
+  <h3>browserWindow Module learn -- 2020/5/5</h3>
+  <button id="new-window">open new window</button>
+  <button class="demo-button disappear" id="focus-on-modal-window">Focus on Demo</button>
+
+  <button id="loadBtn">加载本地数据</button>
+  <div id="showData"></div>
+  <h3>渲染进程和主线程通信</h3>
+  <button id="add">通知主线程打开一个窗口</button>
+  <hr>
+  <h3>菜单操作学习 -- 2020/5/6</h3>
+  <input type="text">
+  <button id="context-menu">打开上下文菜单</button>
+  <script src="./render_process/index.js"></script>
+  <hr>
+  <h3>shell模块</h3>
+  <button id="open-file-manager">打开文件管理</button>
+  <h3>notification模块</h3>
+  <button id="open-noti">触发通知notification</button>
+  <h3>dialogs模块</h3>
+  <button id="select-directory">打开文件夹</button>
+  <div id="selected-file">selected-file:</div>
+  <div id="file-saved">selected-file:</div>
+  <h3>Tray模块</h3>
+  <button id="remove-tray">移除托盘</button>
+  <h3>拖拉功能</h3>
+  <a href="http://google.com" target="_blank">google.com</a>
+  <a href="#" id="drag-file-link">Drag demo</a>
+  <h3>通信功能</h3>
+  <button class="demo-button" id="sync-msg">Ping</button>
+  <span class="demo-response" id="sync-reply"></span>
+  <div class="demo-controls">
+    <button class="demo-button" id="invis-msg">计算阶乘</button>
+    <span class="demo-response" id="invis-reply"></span>
+  </div>
+  <h3>app、系统、node信息</h3>
+  <div>app 信息</div>
+  <p>getAppPath: <span id="app-path"></span></p>
+  <p>screenInfo <span id="got-screen-info"></span> </p>
+  <div>版本信息</div>
+  <p>version <span id="version"></span></p>
+  <div>node 信息</div>
+  <p>模块信息输出<span id="module"></span></p>
+  <h3>COPY AND PASTE 功能</h3>
+  <button id="btn-copy">COPY</button>
+  <input type="text" id="input-copy">
+  <h3>媒体的操作</h3>
+  <div>截图</div>
+  <button id="btn-record">录屏</button>
+  <video id="video"></video>
+  <canvas style="display: none;" id="canvas"></canvas>
+  <button id="btn-screen">截图</button>
+  <div class="demo-controls">
+    <button class="demo-button" id="screen-shot">查看示例</button>
+    <span class="demo-response is-selectable" id="screenshot-path"></span>
+  </div>
+</body>
+
 </html>

@@ -1,0 +1,12 @@
+import('./browser_window.js');
+import('./menu.js');
+import('./shell.js');
+import('./notification.js');
+import('./dialogs.js');
+import('./tray.js');
+import('./drag.js');
+import('./communication.js')
+import('./system.js');
+import('./clipboard.js');
+import('./media.js');
+import('./desktop-capturer.js');
